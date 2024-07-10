@@ -41,6 +41,6 @@ for item in files:
         image = Image.open(image_data)
         
         images.append(image)
-        print(f'Загружено изображение: {image_file}')
-    output_tiff = f'{item["name"]}.tiff'
+        print(f'Загружено изображение: {item["name"]}/{image_file}')
+    output_tiff = f'Result_{item["name"]}.tiff' 
     images[0].save(output_tiff, save_all=True, append_images=images[1:], format='TIFF')
